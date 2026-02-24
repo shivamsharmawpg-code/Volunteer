@@ -53,6 +53,18 @@ body {
   padding: 0.62rem 0;
 }
 
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(20, 37, 63, 0.28);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.5rem 0.85rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
 .logo-wrap {
   width: clamp(210px, 24vw, 250px);
   border-radius: 16px;
@@ -586,18 +598,35 @@ footer .container { padding: 0.8rem 0; }
 }
 
 @media (max-width: 760px) {
+  .site-header {
+    position: static;
+  }
+
   .container { width: min(1240px, 95%); }
   .topbar { gap: 0.7rem; }
   .logo-wrap {
-    width: min(100%, 320px);
-    margin: 0 auto;
+    width: min(calc(100% - 120px), 320px);
+    margin: 0;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav {
+    display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0.4rem;
     margin-left: 0;
+    width: 100%;
+    padding-bottom: 0.35rem;
+  }
+
+  .nav.is-open {
+    display: flex;
   }
 
   .nav a,
