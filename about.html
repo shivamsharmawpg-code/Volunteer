@@ -9,9 +9,28 @@
 <body>
 <header class="site-header">
   <div class="container topbar">
-    <div class="logo-wrap"><img class="logo" src="uploads/iccha.jpeg" alt="ICCHA logo" /></div>
-    <nav class="nav">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="board-of-directors.html">Board</a><a href="heritage-archive.html">Heritage Archive</a><a href="media.html">Media</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    <div class="logo-wrap" aria-label="ICCHA brand">
+      <div class="logo-pillars" aria-hidden="true"><span></span><span></span></div>
+      <div class="logo-wordmark" role="img" aria-label="ICCHA">
+        <span class="arc-i">I</span><span class="arc-c1">C</span><span class="arc-c2">C</span><span class="arc-h">H</span><span class="arc-a">A</span>
+      </div>
+      <div class="logo-swoosh" aria-hidden="true"></div>
+      <div class="logo-est">Established in 2004</div>
+    </div>
+        <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="board-of-directors.html">Board of Directors</a>
+      <a href="heritage-archive.html">Heritage Archive</a>
+      <div class="nav-dropdown">
+        <a href="programs-awards-deadlines.html">Programs <span aria-hidden="true">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="programs-awards-deadlines.html">Award Information &amp; Deadlines</a>
+                    <a href="programs-previous-award-winners.html">Previous Awardees</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
       <span class="divider"></span><a class="membership-btn" href="contact.html#membership">Membership</a>
     </nav>
   </div>
@@ -34,6 +53,18 @@
     </div>
   </section>
 </main>
-<footer><div class="container small">© 2026 ICCHA Inc. All rights reserved</div></footer>
+<footer>
+  <div class="container footer-inner small">
+    <div class="footer-links">
+      <a href="uploads/ICCHA BYLAWS.pdf" target="_blank" rel="noopener">By-laws</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="https://www.facebook.com/iccha.canada/" target="_blank" rel="noopener" aria-label="ICCHA Facebook">
+        <svg class="fb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8.5V6.9c0-.9.6-1.1 1-1.1h2V3h-2.7C10.9 3 10 5 10 7.3v1.2H8v3h2V21h3.5v-9.5H16l.5-3h-3z"/></svg>
+        Facebook
+      </a>
+    </div>
+    <div>© 2026 ICCHA Inc. All rights reserved</div>
+  </div>
+</footer>
 </body>
 </html>
