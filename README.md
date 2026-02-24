@@ -1,6 +1,6 @@
 # indiaheritage.ca local clone
 
-This repository is now organized exclusively around the India Heritage website files under `indiaheritage.ca/`.
+This repository is now organized exclusively around the India Heritage website files at the repository root.
 
 This local static rebuild now includes the questionnaire items that were clearly answered.
 
