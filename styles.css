@@ -50,20 +50,64 @@ body {
 }
 
 .logo-wrap {
-  width: 180px;
-  height: 82px;
-  border-radius: 14px;
-  padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.92);
+  width: clamp(210px, 30vw, 280px);
+  border-radius: 16px;
+  padding: 0.28rem 0.5rem 0.4rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.6);
-  display: grid;
-  place-items: center;
+  text-align: center;
+  line-height: 1;
+  position: relative;
 }
 
-.logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.logo-pillars {
+  position: absolute;
+  inset: 0.35rem 0.45rem auto;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.logo-pillars span {
+  width: 10px;
+  height: 52px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d60c0c, #b40505);
+}
+
+.logo-wordmark {
+  font-family: "Arial Black", "Arial Rounded MT Bold", Impact, sans-serif;
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  letter-spacing: 0.02em;
+  color: #d30808;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  gap: 0.06em;
+}
+
+.logo-wordmark span { display: inline-block; }
+.logo-wordmark .arc-i,
+.logo-wordmark .arc-a { transform: translateY(8px); }
+.logo-wordmark .arc-c1,
+.logo-wordmark .arc-h { transform: translateY(1px); }
+.logo-wordmark .arc-c2 { transform: translateY(-1px); }
+
+.logo-swoosh {
+  height: 18px;
+  margin: 0.08rem auto 0.22rem;
+  width: 88%;
+  border-radius: 0 0 999px 999px;
+  background: radial-gradient(120% 170% at 50% -18%, #8cb8ea 16%, #2f619f 58%, #173864 100%);
+  box-shadow: 0 8px 14px rgba(15, 53, 98, 0.35);
+}
+
+.logo-est {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #1c4272;
+  text-transform: uppercase;
 }
 
 .nav {
@@ -83,6 +127,46 @@ body {
   padding: 0.45rem 0.7rem;
   border-radius: 11px;
   transition: transform 0.22s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  min-width: 250px;
+  background: #d8d8da;
+  border: 1px solid #bec3cb;
+  display: none;
+  z-index: 20;
+  box-shadow: 0 10px 18px rgba(9, 26, 48, 0.24);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  color: #1d2430;
+  border-radius: 0;
+  padding: 0.85rem 1rem;
+  font-weight: 500;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #c8c8cb;
+  transform: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
 }
 
 .nav a:not(.membership-btn):hover {
@@ -317,6 +401,31 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 .section ul { margin: 0 0 1rem; padding-left: 1.1rem; }
 .section li { margin: 0.3rem 0; }
 
+
+.programs-title {
+  text-align: center;
+  margin: 0.2rem 0 1rem;
+  line-height: 1.25;
+}
+
+.notice-banner {
+  max-width: 760px;
+  margin: 0 auto 1.15rem;
+  background: #e62020;
+  color: #fff;
+  border: 1px solid #7f0d0d;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.program-download {
+  margin-top: 0.5rem;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
 .btn {
   display: inline-block;
   padding: 0.64rem 0.95rem;
@@ -395,6 +504,40 @@ footer {
 footer .container { padding: 0.8rem 0; }
 
 
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #33435f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.fb-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+
 .nav a,
 .membership-btn,
 .btn,
@@ -419,4 +562,5 @@ footer .container { padding: 0.8rem 0; }
   .hero-stats { grid-template-columns: 1fr; }
   .hero { margin-top: 0.75rem; padding: 1.3rem 1rem; }
   .card { min-height: auto; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
 }
