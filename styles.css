@@ -3,7 +3,8 @@
   --deep-saffron: #de6e00;
   --india-green: #138808;
   --deep-green: #0d6506;
-  --chakra-blue: #0a3d91;
+  --canada-red: #d80621;
+  --deep-red: #a90318;
   --ink: #14253f;
   --muted: #4f6382;
   --paper: #ffffff;
@@ -41,9 +42,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(100deg, #b75700 0%, #e67f18 16%, #197115 48%, #124f82 80%, #0a3d91 100%);
-  box-shadow: 0 8px 30px rgba(9, 30, 56, 0.3);
+  border-bottom: 1px solid rgba(76, 32, 8, 0.18);
+  background:
+    linear-gradient(90deg, rgba(168, 3, 24, 0.24) 0%, rgba(255, 255, 255, 0) 17%),
+    linear-gradient(270deg, rgba(216, 6, 33, 0.24) 0%, rgba(255, 255, 255, 0) 17%),
+    linear-gradient(102deg, #8f3900 0%, #cf6200 22%, #f7993c 34%, #fff8ee 50%, #f2fff1 64%, #2a8a21 78%, #145f11 100%);
+  box-shadow: 0 10px 28px rgba(77, 35, 10, 0.3);
 }
 
 .topbar {
@@ -68,17 +72,30 @@ body {
 .logo-wrap {
   width: clamp(210px, 24vw, 250px);
   border-radius: 16px;
-  padding: 0.35rem 0.45rem 0.45rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.45rem 0.5rem 0.5rem;
+  background:
+    linear-gradient(90deg, rgba(216, 6, 33, 0.16) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(270deg, rgba(216, 6, 33, 0.16) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.72);
   text-align: center;
   line-height: 1;
   position: relative;
+  overflow: hidden;
   text-decoration: none;
-  box-shadow: 0 8px 16px rgba(9, 30, 56, 0.22);
+  box-shadow: 0 8px 18px rgba(68, 30, 9, 0.24);
+}
+
+.logo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, rgba(255, 153, 51, 0.26) 8%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0) 63%, rgba(216, 6, 33, 0.2) 92%);
+  pointer-events: none;
 }
 
 .site-logo {
+  position: relative;
   display: block;
   width: 100%;
   height: 66px;
@@ -89,10 +106,11 @@ body {
 }
 
 .logo-est {
+  position: relative;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #1c4272;
+  color: #7e2a00;
   text-transform: uppercase;
 }
 
