@@ -297,6 +297,11 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
 
+.hero-cta .btn.fill {
+  min-width: 170px;
+  text-align: center;
+}
+
 .hero-stats {
   display: grid;
   margin-top: 1rem;
@@ -447,21 +452,26 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 
 .btn {
   display: inline-block;
-  padding: 0.64rem 0.95rem;
-  border-radius: 11px;
+  padding: 0.72rem 1.08rem;
+  border-radius: 12px;
   border: 1px solid #9a2b11;
   text-decoration: none;
   color: var(--heritage-ink);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(88, 25, 9, 0.28), 0 8px 16px rgba(169, 3, 24, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 18px rgba(169, 3, 24, 0.12); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(88, 25, 9, 0.24), 0 14px 24px rgba(169, 3, 24, 0.18); }
+
+.btn:active { transform: translateY(0); box-shadow: 0 2px 0 rgba(88, 25, 9, 0.3), 0 5px 10px rgba(169, 3, 24, 0.16); }
 
 .btn.fill {
   color: #fff;
-  background: linear-gradient(96deg, #1b7f15 0%, #a90318 100%);
-  border-color: #7d1f0b;
+  background: linear-gradient(100deg, #1c8f18 0%, #0f6f13 34%, #a90318 100%);
+  border-color: #6b1808;
 }
 
 .btn.saffron {
