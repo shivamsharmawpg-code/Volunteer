@@ -69,10 +69,11 @@ body::before {
 .topbar {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.62rem 0;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
 }
 
+/* Fixed Logo Container */
 .site-logo-link {
   display: inline-flex;
   align-items: center;
@@ -80,6 +81,15 @@ body::before {
   flex: 0 0 auto;
   border-radius: 12px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.9); /* Subtle backdrop to make logo pop */
+  padding: 8px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.site-logo-link:hover {
+  transform: scale(1.02);
 }
 
 .site-logo-link:focus-visible {
@@ -87,11 +97,13 @@ body::before {
   outline-offset: 2px;
 }
 
+/* Fixed Logo Image */
 .site-logo {
   display: block;
-  width: clamp(96px, 14vw, 140px);
-  height: auto;
-  max-height: 58px;
+  width: auto;
+  height: 64px; /* Slightly taller for better readability */
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .nav-toggle {
@@ -105,6 +117,7 @@ body::before {
   font-weight: 700;
   font-size: 0.9rem;
 }
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -405,7 +418,6 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   font-size: 0.96rem;
 }
 
-
 .section {
   background: rgba(255, 255, 255, 0.93);
   border: 1px solid #dbe7f6;
@@ -424,7 +436,6 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 
 .section ul { margin: 0 0 1rem; padding-left: 1.1rem; }
 .section li { margin: 0.3rem 0; }
-
 
 .board-roster {
   padding: 1.3rem;
@@ -527,7 +538,6 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   margin-bottom: 0.75rem;
   color: #17365d;
 }
-
 
 .board-columns-modern {
   display: grid;
@@ -852,7 +862,6 @@ footer {
 
 footer .container { padding: 0.8rem 0; }
 
-
 .footer-inner {
   display: flex;
   align-items: center;
@@ -894,7 +903,6 @@ footer .container { padding: 0.8rem 0; }
   height: 16px;
   fill: currentColor;
 }
-
 
 .nav a,
 .membership-btn,
@@ -956,7 +964,7 @@ footer .container { padding: 0.8rem 0; }
 
   .container { width: min(1240px, 95%); }
   .topbar { gap: 0.7rem; }
-  .site-logo { width: clamp(88px, 30vw, 126px); }
+  .site-logo { height: 50px; } /* Smaller for mobile */
 
   .nav-toggle {
     display: inline-flex;
