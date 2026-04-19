@@ -35,4 +35,37 @@
       }
     });
   });
+
+  const revealTargets = document.querySelectorAll(
+    '.hero, .section, .card, .gallery-item, .leader-card, .metric, .stat'
+  );
+
+  if (!revealTargets.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealTargets.forEach((item) => item.classList.add('is-visible'));
+    return;
+  }
+
+  revealTargets.forEach((item, index) => {
+    item.classList.add('reveal-on-scroll');
+    item.style.transitionDelay = `${Math.min(index * 45, 240)}ms`;
+  });
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      root: null,
+      threshold: 0.15,
+      rootMargin: '0px 0px -8% 0px',
+    }
+  );
+
+  revealTargets.forEach((item) => revealObserver.observe(item));
 })();

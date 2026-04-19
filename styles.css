@@ -34,6 +34,21 @@ body {
   line-height: 1.6;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(800px 260px at 50% -20%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  animation: ambientGlow 9s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes ambientGlow {
+  0%, 100% { opacity: 0.42; }
+  50% { opacity: 0.7; }
+}
+
 .container {
   width: min(1240px, 93%);
   margin: 0 auto;
@@ -270,6 +285,12 @@ main { padding-bottom: 2rem; }
   font-weight: 800;
   color: #6e3400;
   background: rgba(255, 153, 51, 0.2);
+  animation: pulseKicker 3.3s ease-in-out infinite;
+}
+
+@keyframes pulseKicker {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 
 h1 {
@@ -364,6 +385,11 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 .card:hover {
   transform: translateY(-5px) scale(1.01);
   box-shadow: 0 20px 34px rgba(16, 35, 63, 0.16);
+}
+
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(16, 35, 63, 0.14);
 }
 
 .card h3 { font-size: 1.55rem; margin: 0.35rem 0 0.4rem; }
@@ -743,6 +769,16 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 
 .btn.fill:hover::after { transform: translateX(120%); }
 
+.btn.fill,
+.membership-btn {
+  animation: ctaPulse 3.8s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { filter: saturate(100%); }
+  50% { filter: saturate(118%); }
+}
+
 .btn.saffron {
   color: #6b3300;
   border-color: #ebac66;
@@ -772,6 +808,12 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   margin: 0;
   border-radius: 12px;
   box-shadow: 0 8px 18px rgba(169, 3, 24, 0.1);
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 26px rgba(169, 3, 24, 0.14);
 }
 
 .gallery-item img,
@@ -875,12 +917,36 @@ footer .container { padding: 0.8rem 0; }
   will-change: transform;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  body::before,
+  .hero-kicker,
+  .btn.fill,
+  .membership-btn,
+  .hero-media {
+    animation: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
   }
 }
 
