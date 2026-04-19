@@ -73,14 +73,15 @@ body::before {
   padding: 0.62rem 0;
 }
 
+/* FIXED LOGO SECTION */
 .site-logo-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  width: 120px; /* Strict control */
-  height: 60px; /* Strict control */
-  padding: 5px;
+  width: auto;           /* Removed strict 120px width */
+  height: 60px;          /* Maintains header height */
+  padding: 6px 12px;     /* Added horizontal padding for a cleaner look */
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -95,8 +96,8 @@ body::before {
 
 .site-logo {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;           /* Prevents horizontal stretching */
+  height: 100%;          /* Scales to the link height */
   object-fit: contain;
 }
 
@@ -111,6 +112,7 @@ body::before {
   font-weight: 700;
   font-size: 0.9rem;
 }
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -963,7 +965,7 @@ footer .container { padding: 0.8rem 0; }
   .container { width: min(1240px, 95%); }
   .topbar { gap: 0.7rem; }
   /* Scaled down logo for mobile */
-  .site-logo-link { width: 100px; height: 50px; }
+  .site-logo-link { width: auto; height: 50px; }
 
   .nav-toggle {
     display: inline-flex;
