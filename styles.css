@@ -69,26 +69,34 @@ body::before {
 .topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  min-height: 76px;
   padding: 0.62rem 0;
 }
 
-/* FIXED LOGO SECTION 
-   Stripped background, shadow, and border-radius.
-*/
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 60px;
+  max-height: 80%;
+  padding-left: 0.85rem;
+}
+
 .site-logo-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
   width: auto;
-  height: 75px;           /* Increased height slightly for better visibility */
-  padding: 0;             /* Removed padding to avoid weird gaps */
-  background: transparent;/* Changed from rgba(255, 255, 255, 0.95) */
-  border-radius: 0;       /* Removed the 8px rounding */
-  box-shadow: none;       /* Removed the box-shadow */
+  height: 100%;
+  max-height: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   text-decoration: none;
-  overflow: visible;      /* Changed from hidden to prevent clipping */
+  overflow: visible;
 }
 
 .site-logo-link:focus-visible {
@@ -100,6 +108,7 @@ body::before {
   display: block;
   width: auto;
   height: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -119,8 +128,8 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.35rem;
-  margin-left: auto;
 }
 
 .nav a {
@@ -948,7 +957,7 @@ footer .container { padding: 0.8rem 0; }
 
 @media (min-width: 761px) and (max-width: 980px) {
   .topbar { flex-wrap: wrap; }
-  .site-logo-link { margin-inline: auto; }
+  .logo-container { padding-left: 0; margin-inline: auto; }
   .nav { width: 100%; justify-content: center; margin-left: 0; }
   .nav .divider { display: none; }
   .hero-grid,
@@ -966,7 +975,10 @@ footer .container { padding: 0.8rem 0; }
 
   .container { width: min(1240px, 95%); }
   .topbar { gap: 0.7rem; }
-  .site-logo-link { width: auto; height: 50px; }
+  .logo-container {
+    height: 50px;
+    padding-left: 0.45rem;
+  }
 
   .nav-toggle {
     display: inline-flex;
