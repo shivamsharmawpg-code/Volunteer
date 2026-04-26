@@ -1202,6 +1202,87 @@ body.page-ready .modern-pop-card:nth-child(3) {
   margin-top: 0.5rem;
 }
 
+.home-page {
+  background:
+    radial-gradient(800px 340px at 0% -8%, rgba(255, 153, 51, 0.12), transparent 62%),
+    radial-gradient(800px 300px at 100% 0%, rgba(19, 136, 8, 0.12), transparent 60%),
+    linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
+}
+
+.home-page .site-header {
+  background: rgba(248, 251, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #d3dfef;
+  box-shadow: 0 8px 24px rgba(20, 37, 63, 0.08);
+}
+
+.home-page .nav a {
+  background: transparent;
+  color: #243a59;
+  text-shadow: none;
+}
+
+.home-page .hero {
+  margin-top: 1.35rem;
+  border: 1px solid #cfddf0;
+  background:
+    radial-gradient(500px 220px at 2% 4%, rgba(255, 153, 51, 0.14), transparent 64%),
+    radial-gradient(500px 220px at 95% 95%, rgba(19, 136, 8, 0.11), transparent 65%),
+    #ffffff;
+  box-shadow: 0 18px 40px rgba(16, 35, 63, 0.08);
+}
+
+.home-intro,
+.home-highlights {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid #d4e0f0;
+  border-radius: 22px;
+}
+
+.home-pillars {
+  margin-top: 1rem;
+}
+
+.home-pillar {
+  border: 1px solid #d9e4f3;
+  border-radius: 18px;
+  min-height: auto;
+  box-shadow: 0 10px 22px rgba(20, 37, 63, 0.07);
+}
+
+.home-pillar-kicker {
+  display: inline-flex;
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #7f400d;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.text-link {
+  color: #204a88;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.home-gallery-grid .gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
 @keyframes popupIn {
   0% {
     opacity: 0;
@@ -1328,6 +1409,10 @@ body.page-ready .modern-pop-card:nth-child(3) {
   h1 { font-size: clamp(1.55rem, 7vw, 2.1rem); }
   h2 { font-size: clamp(1.2rem, 5.6vw, 1.6rem); }
   .hero-cta .btn { width: 100%; text-align: center; }
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .gallery-item img,
   .gallery-photo { height: 180px; }
   .hero-media .gallery-photo {
