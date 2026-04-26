@@ -73,8 +73,7 @@
 
   revealTargets.forEach((item) => revealObserver.observe(item));
 
-  const hero = document.querySelector('.hero-modern');
-  const scrollCue = document.querySelector('.scroll-cue');
+  const heroAccentOrb = document.querySelector('.hero-accent-orb');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!reduceMotion) {
@@ -83,17 +82,11 @@
     });
   }
 
-  if (hero && !reduceMotion) {
+  if (heroAccentOrb && !reduceMotion) {
     const onScroll = () => {
       const scrollTop = window.scrollY || window.pageYOffset;
-      const moveAmount = Math.min(scrollTop * 0.08, 24);
-      hero.style.transform = `translateY(${moveAmount}px)`;
-
-      if (scrollCue) {
-        const fadeStart = 30;
-        const opacity = Math.max(0, 1 - Math.max(0, scrollTop - fadeStart) / 120);
-        scrollCue.style.opacity = String(opacity);
-      }
+      const moveAmount = Math.min(scrollTop * 0.06, 18);
+      heroAccentOrb.style.transform = `translateY(${moveAmount}px)`;
     };
 
     onScroll();
