@@ -271,7 +271,7 @@ main { padding-bottom: 2rem; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.95fr;
+  grid-template-columns: 1.25fr minmax(320px, 1fr);
   gap: 1rem;
   align-items: stretch;
 }
@@ -350,11 +350,32 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   animation: floatCard 4s ease-in-out infinite;
 }
 
+.hero-media--poster {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  animation: none;
+}
+
 .hero-media .gallery-photo {
   height: auto;
   max-height: 520px;
   object-fit: contain;
   background: #fff;
+}
+
+.hero-media--poster .gallery-photo {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  border-radius: 14px;
+  object-fit: contain;
+  box-shadow: 0 12px 24px rgba(16, 35, 63, 0.14);
+}
+
+.hero-media--poster .small {
+  margin-top: 0.4rem;
 }
 
 @keyframes floatCard {
