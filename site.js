@@ -1,4 +1,8 @@
 (() => {
+  window.requestAnimationFrame(() => {
+    document.body.classList.add('page-ready');
+  });
+
   const mobileBreakpoint = window.matchMedia('(max-width: 760px)');
   const toggleButtons = document.querySelectorAll('.nav-toggle');
 
@@ -72,6 +76,12 @@
   const hero = document.querySelector('.hero-modern');
   const scrollCue = document.querySelector('.scroll-cue');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion) {
+    document.querySelectorAll('.modern-pop-card').forEach((item, index) => {
+      item.style.animationDelay = `${Math.min(index * 110, 440)}ms`;
+    });
+  }
 
   if (hero && !reduceMotion) {
     const onScroll = () => {
