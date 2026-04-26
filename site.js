@@ -68,4 +68,25 @@
   );
 
   revealTargets.forEach((item) => revealObserver.observe(item));
+
+  const hero = document.querySelector('.hero-modern');
+  const scrollCue = document.querySelector('.scroll-cue');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (hero && !reduceMotion) {
+    const onScroll = () => {
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const moveAmount = Math.min(scrollTop * 0.08, 24);
+      hero.style.transform = `translateY(${moveAmount}px)`;
+
+      if (scrollCue) {
+        const fadeStart = 30;
+        const opacity = Math.max(0, 1 - Math.max(0, scrollTop - fadeStart) / 120);
+        scrollCue.style.opacity = String(opacity);
+      }
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 })();
