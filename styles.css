@@ -706,6 +706,20 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   gap: 0.9rem;
 }
 
+.archive-doc-frame {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 1px solid #c7daef;
+  border-radius: 10px;
+  background: #fff;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.archive-doc-link {
+  display: inline-flex;
+}
+
 .section ul { margin: 0 0 1rem; padding-left: 1.1rem; }
 .section li { margin: 0.3rem 0; }
 
