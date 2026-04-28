@@ -1259,10 +1259,12 @@ body.page-ready .modern-pop-card:nth-child(3) {
 }
 
 .home-page .site-header {
-  background: rgba(248, 251, 255, 0.94);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #d3dfef;
-  box-shadow: 0 8px 24px rgba(20, 37, 63, 0.08);
+  background:
+    linear-gradient(90deg, rgba(168, 3, 24, 0.24) 0%, rgba(255, 255, 255, 0) 17%),
+    linear-gradient(270deg, rgba(216, 6, 33, 0.24) 0%, rgba(255, 255, 255, 0) 17%),
+    linear-gradient(102deg, #8f3900 0%, #cf6200 22%, #f7993c 34%, #fff8ee 50%, #f2fff1 64%, #2a8a21 78%, #145f11 100%);
+  border-bottom: 1px solid rgba(76, 32, 8, 0.18);
+  box-shadow: 0 10px 28px rgba(77, 35, 10, 0.3);
 }
 
 .home-page .nav a {
