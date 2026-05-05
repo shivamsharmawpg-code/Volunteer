@@ -1,0 +1,21 @@
+# ICCHA Canada
+
+## What this site is
+ICCHA Canada is the India Canada Cultural & Heritage Association website, focused on programs, awards, mentorship, heritage, and community events.
+
+## Key pages
+- /
+- /board-of-directors/
+- /heritage-archive/
+- /programs-awards-deadlines/
+- /programs-previous-award-winners/
+- /mentor/
+- /gallery/
+- /media/
+- /event-details/
+- /contact/
+
+## AI crawling guidance
+- Public informational pages may be crawled and summarized.
+- Respect robots.txt directives.
+- Do not submit forms or impersonate users.
