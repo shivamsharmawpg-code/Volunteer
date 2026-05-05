@@ -1,19 +1,22 @@
 # ICCHA Canada
 
 ## What this site is
-ICCHA Canada is the India Canada Cultural & Heritage Association website, focused on programs, awards, mentorship, heritage, and community events.
+ICCHA Canada (India Canada Cultural & Heritage Association) is a non-profit organization focused on programs, awards, mentorship, heritage preservation, and community events for Indian-origin families in Canada.
+
+## Domain
+https://indiaheritage.ca
 
 ## Key pages
-- /
-- /board-of-directors/
-- /heritage-archive/
-- /programs-awards-deadlines/
-- /programs-previous-award-winners/
-- /mentor/
-- /gallery/
-- /media/
-- /event-details/
-- /contact/
+- / — Homepage with organization overview and upcoming events
+- /board-of-directors/ — 2026 Executive, Board of Directors, and Trustees
+- /heritage-archive/ — Leadership addresses, Mahatma Gandhi sculpture legacy, publications
+- /programs-awards-deadlines/ — Lifetime Achievement, Distinguished Service, and Student Scholarship award criteria
+- /programs-previous-award-winners/ — Full list of award recipients 2004–2025
+- /mentor/ — Youth mentorship program information
+- /gallery/ — Event photos from awards dinners and conferences
+- /media/ — Press coverage and publication archive
+- /event-details/ — Current event: Reception Dinner May 11, 2026
+- /contact/ — Contact form and membership inquiries
 
 ## AI crawling guidance
 - Public informational pages may be crawled and summarized.
