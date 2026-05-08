@@ -401,9 +401,9 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 .sold-out-banner {
   margin: 0 auto 0.75rem;
   width: fit-content;
-  padding: 0.4rem 1rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 1.28rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -442,6 +442,26 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   font-weight: 700;
 }
 
+
+.sold-out-text {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9b2f00;
+}
+
+
+.sold-out-text--soft {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: #2a3f5f;
+  font-weight: 600;
+}
+.sold-out-btn {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
 .event-meta-cta {
   display: flex;
   flex-wrap: wrap;
