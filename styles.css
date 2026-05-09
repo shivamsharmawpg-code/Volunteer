@@ -1598,3 +1598,46 @@ body.page-ready .modern-pop-card:nth-child(3) {
   color: var(--ink);
   font-weight: 700;
 }
+
+/* ICCHA 2026 Event Focus Section */
+.grid-2-modern {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.event-focus {
+  background: linear-gradient(135deg, #fffcf8 0%, #fdf5e6 100%);
+  border: 1px solid #fce6c5;
+}
+
+.event-points {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.event-points li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--heritage-ink);
+}
+
+@media (max-width: 768px) {
+  .grid-2-modern {
+    grid-template-columns: 1fr;
+  }
+}
+
+.archive-cta {
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.event-visual-img {
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+
