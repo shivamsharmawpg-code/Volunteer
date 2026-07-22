@@ -93,3 +93,68 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 })();
+
+
+(() => {
+  const consentKey = 'iccha_cookie_consent_v1';
+
+  const ensureFooter = () => {
+    if (document.querySelector('.site-legal-footer')) return;
+    const footer = document.createElement('footer');
+    footer.className = 'site-legal-footer';
+    footer.innerHTML = `
+      <div class="container">
+        <nav aria-label="Legal links">
+          <a href="/legal/">Legal Center</a>
+          <a href="/legal/privacy/">Privacy Notice</a>
+          <a href="/legal/cookies/">Cookie Notice</a>
+          <a href="/legal/terms/">Terms of Use</a>
+          <a href="/legal/accessibility/">Accessibility</a>
+          <a href="/legal/children/">Children's Privacy</a>
+          <a href="/legal/disclaimer/">Disclaimer</a>
+          <a href="/legal/data-request/">Data Requests</a>
+        </nav>
+      </div>`;
+    document.body.appendChild(footer);
+  };
+
+  const removeBanner = () => {
+    const banner = document.querySelector('.cookie-banner');
+    if (banner) banner.remove();
+  };
+
+  const setConsent = (value) => {
+    localStorage.setItem(consentKey, value);
+    removeBanner();
+  };
+
+  const ensureCookieBanner = (forceOpen = false) => {
+    const hasDecision = localStorage.getItem(consentKey);
+    if (hasDecision && !forceOpen) return;
+    removeBanner();
+    const banner = document.createElement('section');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie preference');
+    banner.innerHTML = `
+      <p>We use essential cookies for site operation. Optional analytics cookies are off by default unless you accept.</p>
+      <div class="cookie-banner-actions">
+        <button class="cookie-accept" type="button">Accept optional analytics</button>
+        <button class="cookie-reject" type="button">Keep optional analytics off</button>
+      </div>`;
+
+    banner.querySelector('.cookie-accept').addEventListener('click', () => setConsent('accepted'));
+    banner.querySelector('.cookie-reject').addEventListener('click', () => setConsent('rejected'));
+    document.body.appendChild(banner);
+  };
+
+  const bindCookieSettingsButton = () => {
+    const cookieSettingsButton = document.getElementById('reopen-cookie-settings');
+    if (!cookieSettingsButton) return;
+    cookieSettingsButton.addEventListener('click', () => ensureCookieBanner(true));
+  };
+
+  ensureFooter();
+  ensureCookieBanner();
+  bindCookieSettingsButton();
+})();

@@ -1641,3 +1641,30 @@ body.page-ready .modern-pop-card:nth-child(3) {
 }
 
 
+
+.site-legal-footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  padding: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.site-legal-footer nav { display:flex; flex-wrap:wrap; gap:.75rem; }
+.site-legal-footer a { color: var(--ink); }
+.legal-page { max-width: 900px; background: #fff; border:1px solid var(--line); border-radius:16px; padding:1.5rem; margin-top:1.2rem; }
+.cookie-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background: #13243f;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.cookie-banner p { margin: 0 0 .75rem; }
+.cookie-banner-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+.cookie-banner button { border:0; padding:.55rem .85rem; border-radius:8px; font-weight:700; cursor:pointer; }
+.cookie-accept { background: #ff9933; color:#201100; }
+.cookie-reject { background: #dbe6f3; color:#13243f; }
