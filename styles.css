@@ -287,6 +287,10 @@ main { padding-bottom: 2rem; }
   align-items: stretch;
 }
 
+.hero-grid--single {
+  grid-template-columns: 1fr;
+}
+
 .hero-kicker {
   display: inline-block;
   margin: 0 0 0.8rem;
@@ -641,6 +645,30 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 
 .section.is-visible h2::after {
   width: 100%;
+}
+
+.scholarship-alert {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(19, 136, 8, 0.35);
+  background: linear-gradient(135deg, rgba(19, 136, 8, 0.12), rgba(255, 153, 51, 0.16), #fff);
+}
+
+.scholarship-alert__eyebrow {
+  display: inline-flex;
+  margin: 0 0 0.45rem;
+  padding: 0.28rem 0.78rem;
+  border-radius: 999px;
+  background: var(--india-green);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scholarship-alert__actions {
+  margin-top: 1.05rem;
 }
 
 .history-home {
@@ -1040,6 +1068,11 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
   font-weight: 700;
 }
 
+.notice-banner--open {
+  background: var(--india-green);
+  border-color: #0a6e04;
+}
+
 .program-download {
   margin-top: 0.5rem;
   letter-spacing: 0.15em;
@@ -1165,12 +1198,6 @@ p { margin-top: 0; color: var(--muted); font-size: 1rem; }
 
 .final-cta .hero-cta {
   justify-content: center;
-}
-
-.event-details-grid {
-  display: grid;
-  gap: 0.9rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .gallery-item figcaption .caption-label {
@@ -1639,5 +1666,3 @@ body.page-ready .modern-pop-card:nth-child(3) {
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
-
-
