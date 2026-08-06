@@ -7,7 +7,7 @@ ICCHA Canada (India Canada Cultural & Heritage Association) is a non-profit orga
 https://indiaheritage.ca
 
 ## Key pages
-- / — Homepage with organization overview and upcoming events
+- / — Homepage with organization overview, programs, and community highlights
 - /board-of-directors/ — 2026 Executive, Board of Directors, and Trustees
 - /heritage-archive/ — Leadership addresses, Mahatma Gandhi sculpture legacy, publications
 - /programs-awards-deadlines/ — Lifetime Achievement, Distinguished Service, and Student Scholarship award criteria
@@ -15,7 +15,6 @@ https://indiaheritage.ca
 - /mentor/ — Youth mentorship program information
 - /gallery/ — Event photos from awards dinners and conferences
 - /media/ — Press coverage and publication archive
-- /event-details/ — Current event: Reception Dinner May 11, 2026
 - /contact/ — Contact form and membership inquiries
 
 ## AI crawling guidance
