@@ -1,4 +1,8 @@
 (() => {
+  window.requestAnimationFrame(() => {
+    document.body.classList.add('page-ready');
+  });
+
   const mobileBreakpoint = window.matchMedia('(max-width: 760px)');
   const toggleButtons = document.querySelectorAll('.nav-toggle');
 
@@ -68,4 +72,24 @@
   );
 
   revealTargets.forEach((item) => revealObserver.observe(item));
+
+  const heroAccentOrb = document.querySelector('.hero-accent-orb');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion) {
+    document.querySelectorAll('.modern-pop-card').forEach((item, index) => {
+      item.style.animationDelay = `${Math.min(index * 110, 440)}ms`;
+    });
+  }
+
+  if (heroAccentOrb && !reduceMotion) {
+    const onScroll = () => {
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const moveAmount = Math.min(scrollTop * 0.06, 18);
+      heroAccentOrb.style.transform = `translateY(${moveAmount}px)`;
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 })();

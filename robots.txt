@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /test/
+
+Sitemap: https://indiaheritage.ca/sitemap.xml
+
+# AI/LLM crawling guidance
+# See /llms.txt for AI crawling policy
